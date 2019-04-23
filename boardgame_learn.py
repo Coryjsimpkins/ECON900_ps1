@@ -38,8 +38,9 @@ X = X.dropna()
 #print(trainer.head(20))
 
 results = regression.predict(X)
-
+score= regression.score(data, target)
 plt.scatter(X['avg_rating'], results)
 plt.savefig('predicted_scatter.png')
 
 print(results)
+print('R^2: ' + str(score))
